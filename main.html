@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>DashBoard</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="materialize/css/materialize.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>DashBoard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="materialize/css/materialize.min.css">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="img/fond_sidebar.jpg">
+        </div>
+        <img class="circle" src="img/iut.png">
+        <span class="white-text name">IUT Team</span>
+        <span class="white-text email">iutteam@gmail.com</span>
+      </div>
+    </li>
+    <li><a href="#"><i class="material-icons">cloud</i>A voir</a></li>
+    <li><a href="#">A voir</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a class="subheader">A voir</a></li>
+    <li><a class="waves-effect" href="#">A voir</a></li>
+  </ul>
+
+  <div id="marge">
+
+    <!-- HEADER -->
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">Tableau de bord</a>
@@ -17,39 +44,29 @@
       </div>
     </nav>
 
-  <ul id="slide-out" class="sidenav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#name"><span class="white-text name">John Doe</span></a>
-      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <!-- BODY -->
+    <main>
 
-    <!--
-    <script type="plain/text" id="page-donnees">
-      <div class="container">
+      <script type="plain/text" id="page-donnees">
         <h1>Test</h1>
-      </div>
-    </script>
-    -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="materialize/js/materialize.min.js"></script>
-    <script src="js/vue/VueDonnees.js"></script>
-    <script src="js/modele/Donnee.js"></script>
-    <script src="js/controleur/application.js"></script>
-    <script>
-        $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-    </script>
-  </body>
+      </script>
+
+    </main>
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="materialize/js/materialize.min.js"></script>
+  <script src="js/vue/VueDonnees.js"></script>
+  <script src="js/modele/Donnee.js"></script>
+  <script src="js/controleur/application.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+
+</body>
+
 </html>

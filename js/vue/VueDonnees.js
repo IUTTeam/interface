@@ -4,8 +4,8 @@ var VueDonnees = (function() {
     return function() {
 
       this.afficher = function() {
-
-        elementBody = document.getElementsByTagName("body")[0];
+        
+        elementBody = document.getElementsByTagName("main")[0];
         elementBody.innerHTML = pageDonnee;
       }
     } 
