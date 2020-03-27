@@ -1,12 +1,13 @@
-var VueDonnees = (function() {
-    pageDonnee = document.getElementById("page-donnees").innerHTML;
-  
-    return function() {
+class VueDonnees {
 
-      this.afficher = function() {
-        
-        elementBody = document.getElementsByTagName("main")[0];
-        elementBody.innerHTML = pageDonnee;
-      }
-    } 
-})();
+	constructor() {
+		console.log("Constructeur de la classe VueDonnees.");
+		this.pageDonnee = document.getElementById("page-donnees").innerHTML;
+	}
+
+	afficher() {
+		let elementBody = document.getElementsByTagName("main")[0];
+        elementBody.innerHTML = this.pageDonnee;
+	}
+
+}

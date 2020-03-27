@@ -1,21 +1,21 @@
-(function() {
+class Application {
 
-    var initialiser = function() {
-      window.addEventListener("hashchange", naviguer);
-      naviguer();
-    };
-  
-    var naviguer = function() {
-  
-      var hash = window.location.hash;
-  
-      if (!hash) {
-  
-        var vueDonnees = new VueDonnees();
-        vueDonnees.afficher();
-      } 
-    }
-  
-    initialiser();
-})();
-  
+	constructor() {
+		console.log("Constructeur de la classe Application.");
+
+		this.vueDonnees = new VueDonnees;
+
+		window.addEventListener("hashchange", function() {
+			this.naviguer();
+		});
+		this.naviguer();
+	}
+
+	naviguer() {
+		let hash = window.location.hash;
+
+		if (!hash) {
+			this.vueDonnees.afficher();
+		}
+	}
+}
