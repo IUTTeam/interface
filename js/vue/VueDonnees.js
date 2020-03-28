@@ -22,6 +22,11 @@ class VueDonnees {
 		sidebar.innerHTML += textSidebar;
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
+		var data = {
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+			series: [[5, 2, 4, 2, 0]]
+		};
+		new Chartist.Line('.ct-chart', data);
 	}
 
 	creerDivs(types) {
@@ -30,7 +35,7 @@ class VueDonnees {
 
 		if(types.length == 2) {
 
-			textAccueil += "<div class='row'><div class='col s6'>" + types[0] + "</div>";
+			textAccueil += "<div class='row'><div class='col s6'>" + types[0] + "<div class='ct-chart ct-perfect-fourth'></div></div>";
 			textAccueil += "<div class='col s6'>" + types[1] + "</div></div>";
 		} else {
 
