@@ -1,9 +1,9 @@
 class Application {
 
 	constructor() {
-		console.log("Constructeur de la classe Application.");
 
 		this.vueDonnees = new VueDonnees;
+		this.typeDAO = new TypeDAO;
 
 		window.addEventListener("hashchange", function() {
 			this.naviguer();
@@ -15,7 +15,8 @@ class Application {
 		let hash = window.location.hash;
 
 		if (!hash) {
-			this.vueDonnees.afficher();
+			let types = this.typeDAO.recupererType();
+			this.vueDonnees.afficher(types);
 		}
 	}
 }

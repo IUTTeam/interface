@@ -1,5 +1,4 @@
 (function() {
-    console.log("index.js");
     var application = new Application();
 })();
 // fonction anonyme auto-executante.
