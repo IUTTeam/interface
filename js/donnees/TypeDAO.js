@@ -1,5 +1,6 @@
 class TypeDAO {
 
+
     async recupererType() {
 
         var resultat;

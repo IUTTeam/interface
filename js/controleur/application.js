@@ -11,11 +11,11 @@ class Application {
 		this.naviguer();
 	}
 
-	naviguer() {
+	async naviguer() {
 		let hash = window.location.hash;
 
 		if (!hash) {
-			let types = this.typeDAO.recupererType();
+			let types = await this.typeDAO.recupererType();
 			this.vueDonnees.afficher(types);
 		}
 	}
