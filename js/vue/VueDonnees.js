@@ -12,9 +12,6 @@ class VueDonnees {
 
 		let textSidebar = "";
 
-		console.log(types);
-		
-
 		types.forEach(type => {
 			
 			textSidebar += "<li><a href='#'><i class='material-icons'>data_usage</i>" + type + "</a></li>";
