@@ -17,10 +17,10 @@ class VueDonnees {
 
 		types.forEach(type => {
 			
-			textSidebar += "<li><a href='#'><i class='material-icons'>cloud</i>" + type + "</a></li>";
+			textSidebar += "<li><a href='#'><i class='material-icons'>data_usage</i>" + type + "</a></li>";
 		});
 
-		sidebar.innerHTML = textSidebar;
+		sidebar.innerHTML += textSidebar;
         elementBody.innerHTML = this.pageDonnee;
 	}
 } 
