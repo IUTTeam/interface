@@ -23,6 +23,7 @@ class VueDonnees {
 		
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
+
 		var data = {
 			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
 			series: [[5, 2, 4, 2, 0]]
@@ -40,7 +41,7 @@ class VueDonnees {
 			textAccueil += "<div class='col s6'>" + types[1].type + "</div></div>";
 		} else {
 
-			textAccueil += "<div class='row'><div class='col s4'>" + types[0].type + "</div>";
+			textAccueil += "<div class='row'><div class='col s4'>" + types[0].type + "<div class='ct-chart ct-perfect-fourth'></div></div>";
 			textAccueil += "<div class='col s4'>" + types[1].type + "</div>";
 			textAccueil += "<div class='col s4'>" + types[2].type + "</div></div>";
 		}
