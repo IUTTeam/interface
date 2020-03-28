@@ -28,7 +28,13 @@ class VueDonnees {
 			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
 			series: [[5, 2, 4, 2, 0]]
 		};
-		new Chartist.Line('.ct-chart', data);
+		var options = {
+  			// Don't draw the line chart points
+  			showPoint: true,
+ 			 // Disable line smoothing
+  			lineSmooth: true,
+  		};
+		new Chartist.Line('.ct-chart', data, options);
 	}
 
 	creerDivs(types) {
@@ -37,11 +43,11 @@ class VueDonnees {
 
 		if(types.length == 2) {
 
-			textAccueil += "<div class='row'><div class='col s6'>" + types[0].type + "</div>";
+			textAccueil += "<div class='row'><div class='col s6'>" + types[0].type + "<div class='ct-chart ct-perfect-fourth ct-series-a'></div>";
 			textAccueil += "<div class='col s6'>" + types[1].type + "</div></div>";
 		} else {
 
-			textAccueil += "<div class='row'><div class='col s4'>" + types[0].type + "<div class='ct-chart ct-perfect-fourth'></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'>" + types[0].type + "<div class='ct-chart ct-perfect-fourth ct-series-a'></div></div>";
 			textAccueil += "<div class='col s4'>" + types[1].type + "</div>";
 			textAccueil += "<div class='col s4'>" + types[2].type + "</div></div>";
 		}
