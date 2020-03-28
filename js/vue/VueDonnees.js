@@ -14,12 +14,13 @@ class VueDonnees {
 
 		types.forEach(type => {
 			
-			textSidebar += "<li><a href='#'><i class='material-icons'>data_usage</i>" + type + "</a></li>";
+			textSidebar += "<li><a href='#'><i class='material-icons'>data_usage</i>" + type.type + "</a></li>";
 		});
 
 		let textAccueil = this.creerDivs(types);
 
 		sidebar.innerHTML += textSidebar;
+		
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
 	}
@@ -30,13 +31,13 @@ class VueDonnees {
 
 		if(types.length == 2) {
 
-			textAccueil += "<div class='row'><div class='col s6'>" + types[0] + "</div>";
-			textAccueil += "<div class='col s6'>" + types[1] + "</div></div>";
+			textAccueil += "<div class='row'><div class='col s6'>" + types[0].type + "</div>";
+			textAccueil += "<div class='col s6'>" + types[1].type + "</div></div>";
 		} else {
 
-			textAccueil += "<div class='row'><div class='col s4'>" + types[0] + "</div>";
-			textAccueil += "<div class='col s4'>" + types[1] + "</div>";
-			textAccueil += "<div class='col s4'>" + types[2] + "</div></div>";
+			textAccueil += "<div class='row'><div class='col s4'>" + types[0].type + "</div>";
+			textAccueil += "<div class='col s4'>" + types[1].type + "</div>";
+			textAccueil += "<div class='col s4'>" + types[2].type + "</div></div>";
 		}
 
 		return textAccueil;
