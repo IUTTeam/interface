@@ -2,6 +2,7 @@ class DonneeDAO {
 
     constructor() {
         this.NOMBRE_SECONDES_MOIS = 2628000;
+        this.NOMBRE_SECONDES_JOUR = 86400;
     }
 
     async recupererDonnee(type, unite) {
@@ -24,7 +25,7 @@ class DonneeDAO {
 
     creerJSON(type, unite) {
 
-        let interval = this.getIntervalleAnnee();
+        let interval = this.getIntervalleJour();
 
         var text = '{"type":"' + type + '",' +
             '"unite":"' + unite + '",' +
@@ -40,8 +41,6 @@ class DonneeDAO {
 
         let intervalle = "";
         let timestamp = Date.now() / 1000;
-        console.log(timestamp - this.nombreDeSecondesDepuisDebutDuMois());
-        
 
         for (let i = 0; i < 12; i++) {
             
@@ -56,6 +55,21 @@ class DonneeDAO {
 
         intervalle = intervalle.substring(0, intervalle.length - 1);
 
+        return intervalle;
+    }
+
+    getIntervalleJour() {
+
+        let intervalle = "";
+        let timestamp = Date.now() / 1000;
+
+        for (let i = 0; i < 31; i++) {
+            
+            intervalle += "[" + (timestamp - this.NOMBRE_SECONDES_JOUR * (i + 1)) + "," + (timestamp - this.NOMBRE_SECONDES_JOUR * i) + "],";
+        }
+
+        intervalle = intervalle.substring(0, intervalle.length - 1);
+        
         return intervalle;
     }
 
