@@ -47,3 +47,7 @@ body {
 .right {
 	float: right;
 }
+
+#couleurDuBoss {
+	background-color: #202940;
+}
