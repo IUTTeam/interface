@@ -25,13 +25,19 @@
 	}
 }
 
+#margeDeux {
+
+	margin-top: 3.5%;
+}
+
 body {
 	background-color: #1a2035;
 	color: #a9afbbd1;
 }
 
 .titre {
-	margin-bottom: 5em;
+	margin-bottom: 3.8%;
+	margin-right: 30px;
 }
 
 #padding {
