@@ -1,11 +1,23 @@
 @media screen and (max-width: 992px) {
 	#marge {
-  		margin-left: 30px;
+  		margin-left: 3px;
 	}
 }
 
 @media screen and (min-width: 992px) {
 	#marge {
+  		margin-left: 303px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#margeDeux {
+  		margin-left: 30px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	#margeDeux {
   		margin-left: 330px;
 	}
 }
