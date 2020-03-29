@@ -18,3 +18,11 @@ body {
 .background-vert {
 	background-color: green;
 }
+
+.background-gris-clair {
+	background-color: #202940;
+}
+
+.titre {
+	margin-bottom: 5em;
+}

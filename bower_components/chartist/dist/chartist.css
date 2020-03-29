@@ -144,7 +144,7 @@
   stroke-dasharray: 2px; }
 
 .ct-grid-background {
-  fill: none; }
+  fill: white; }
 
 .ct-point {
   stroke-width: 10px;

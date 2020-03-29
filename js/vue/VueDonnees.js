@@ -5,6 +5,20 @@ class VueDonnees {
 		this.pageDonnee = document.getElementById("page-donnees").innerHTML;
 	}
 
+	afficherGraphique(nomClass,tableauValeur,tableauLabel){	
+		var data = {
+			labels: tableauLabel,
+			series: [tableauValeur]
+		};
+		var options = {
+  			// Don't draw the line chart points
+  			showPoint: true,
+ 			 // Disable line smoothing
+  			lineSmooth: true,
+  		};
+		new Chartist.Line(nomClass, data, options);
+	}
+
 	afficher(types,moyennesPourGraphe) {
 
 		let sidebar = document.getElementById("types");
@@ -24,17 +38,10 @@ class VueDonnees {
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
 
-		var data = {
-			labels: ['1', '2', '3', '4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','20','21','22','23','24'],
-			series: [moyennesPourGraphe[0]]
-		};
-		var options = {
-  			// Don't draw the line chart points
-  			showPoint: true,
- 			 // Disable line smoothing
-  			lineSmooth: true,
-  		};
-		new Chartist.Line('.ct-chart', data, options);
+		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+
 	}
 
 	creerDivs(types) {
@@ -49,9 +56,9 @@ class VueDonnees {
 
 		} else {
 
-			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[0].type + "</span><p><a href='#'>Consulter</a></p></div></div></div>";
-			textAccueil += "<div class='col s4'>" + types[1].type + "</div>";
-			textAccueil += "<div class='col s4'>" + types[2].type + "</div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart1 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[0].type + "</span><p><a href='#'>Consulter</a></p></div></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart2 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[1].type + "</span><p><a href='#'>Consulter</a></p></div></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart3 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[2].type + "</span><p><a href='#'>Consulter</a></p></div></div></div></div>";
 		}
 
 		return textAccueil;
