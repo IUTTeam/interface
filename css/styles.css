@@ -31,3 +31,7 @@ body {
 .marge-top {
 	padding-top: 1em;
 }
+
+.right {
+	float: right;
+}
