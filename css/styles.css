@@ -20,6 +20,9 @@
 	#margeDeux {
   		margin-left: 330px;
 	}
+	#ouverture {
+		display: none;
+	}
 }
 
 body {
