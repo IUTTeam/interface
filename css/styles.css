@@ -62,6 +62,11 @@ body {
 	float: right;
 }
 
+#milieu {
+
+	text-align: center;
+}
+
 #couleurDuBoss {
 	background-color: #202940;
 }

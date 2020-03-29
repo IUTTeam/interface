@@ -34,10 +34,11 @@ class VueDonnees {
 		let textAccueil = this.creerDivs(types);
 
 		sidebar.innerHTML += textSidebar;
-		
-		elementBody.innerHTML += this.pageDonnee;
-		elementBody.innerHTML += textAccueil;
 
+		elementBody.innerHTML += textAccueil;
+		elementBody.innerHTML += this.pageDonnee;
+		document.getElementById("nbCapteur").innerHTML = types.length;
+		
 		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
 		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
 		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
