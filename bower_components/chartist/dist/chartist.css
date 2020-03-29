@@ -139,7 +139,7 @@
   text-anchor: end; }
 
 .ct-grid {
-  stroke: rgba(255, 255, 255, 1);
+  stroke: rgba(255, 255, 255, 0.2);
   stroke-width: 1px;
   stroke-dasharray: 2px; }
 
@@ -147,7 +147,7 @@
   fill: white; }
 
 .ct-point {
-  stroke-width: 10px;
+  stroke-width: 1px;
   stroke-linecap: round; }
 
 .ct-line {
