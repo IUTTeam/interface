@@ -3,6 +3,7 @@ class DonneeDAO {
     constructor() {
         this.NOMBRE_SECONDES_MOIS = 2628000;
         this.NOMBRE_SECONDES_JOUR = 86400;
+        this.NOMBRE_SECONDES_HEURE = 3600;
     }
 
     async recupererMoyennesDonneesQuotidiennes(type) {
@@ -50,7 +51,7 @@ class DonneeDAO {
 
         let moyenne = [];
 
-        for(let i = 0; i < 31; i++) {
+        for(let i = 0; i < 24; i++) {
 
             moyenne.push(json.statsDonnees[i].moyenne);
         }
@@ -60,7 +61,7 @@ class DonneeDAO {
 
     creerJSON(type, unite) {
 
-        let interval = this.getIntervalleMois();
+        let interval = this.getIntervalleJour();
 
         var text = '{"type":"' + type + '",' +
             '"unite":"' + unite + '",' +
@@ -101,6 +102,21 @@ class DonneeDAO {
         for (let i = 0; i < 31; i++) {
 
             intervalle += "[" + (timestamp - this.NOMBRE_SECONDES_JOUR * (i + 1)) + "," + (timestamp - this.NOMBRE_SECONDES_JOUR * i) + "],";
+        }
+
+        intervalle = intervalle.substring(0, intervalle.length - 1);
+
+        return intervalle;
+    }
+
+    getIntervalleJour() {
+
+        let intervalle = "";
+        let timestamp = Date.now() / 1000;
+
+        for (let i = 0; i < 24; i++) {
+
+            intervalle += "[" + (timestamp - this.NOMBRE_SECONDES_HEURE * (i + 1)) + "," + (timestamp - this.NOMBRE_SECONDES_HEURE * i) + "],";
         }
 
         intervalle = intervalle.substring(0, intervalle.length - 1);
