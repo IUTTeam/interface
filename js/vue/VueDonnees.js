@@ -5,7 +5,7 @@ class VueDonnees {
 		this.pageDonnee = document.getElementById("page-donnees").innerHTML;
 	}
 
-	afficher(types) {
+	afficher(types,moyennesPourGraphe) {
 
 		let sidebar = document.getElementById("types");
 		let elementBody = document.getElementsByTagName("main")[0];
@@ -23,10 +23,11 @@ class VueDonnees {
 		
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
+		console.log(moyennesPourGraphe[0]);
 
 		var data = {
-			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-			series: [[5, 2, 4, 2, 0]]
+			labels: ['1', '2', '3', '4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','20','21','22','23','24'],
+			series: [moyennesPourGraphe[0]]
 		};
 		var options = {
   			// Don't draw the line chart points
