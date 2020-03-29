@@ -27,8 +27,6 @@ class Application {
 					}
 				}
 			}
-
-			console.log(moyennesPourGraphe);
 			
 			this.vueDonnees.afficher(types,moyennesPourGraphe);
 		}

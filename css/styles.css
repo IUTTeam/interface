@@ -34,6 +34,11 @@ body {
 	margin-bottom: 5em;
 }
 
+#padding {
+
+	float: right;
+}
+
 .bord-arrondi {
 	border-radius: 0.2em;
 }
