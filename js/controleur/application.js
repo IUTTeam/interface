@@ -16,9 +16,11 @@ class Application {
 		let hash = window.location.hash;
 
 		if (!hash) {
-			
-			await this.donneeDAO.recupererDonnee("temperature", "C");
+		
 			let types = await this.typeDAO.recupererType();
+			let moyennesPourGraphe = await this.donneeDAO.recupererMoyennesDonneesQuotidiennes(types);
+			console.log(moyennesPourGraphe);
+			
 			this.vueDonnees.afficher(types);
 		}
 	}
