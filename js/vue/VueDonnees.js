@@ -38,9 +38,9 @@ class VueDonnees {
 		elementBody.innerHTML += this.pageDonnee;
 		elementBody.innerHTML += textAccueil;
 
-		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
-		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
-		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2], ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
 
 	}
 
