@@ -56,9 +56,9 @@ class VueDonnees {
 
 		} else {
 
-			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart1 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[0].type + "</span><p><a href='#'>Consulter</a></p></div></div></div>";
-			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart2 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[1].type + "</span><p><a href='#'>Consulter</a></p></div></div></div>";
-			textAccueil += "<div class='row'><div class='col s4'><div class='card'><div class='card-image waves-effect waves-block waves-light background-vert'><div class='ct-chart3 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator grey-text text-darken-4'>" + types[2].type + "</span><p><a href='#'>Consulter</a></p></div></div></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card marge-top blue-grey darken-3'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator white-text'>" + types[0].type + "</span><p><a href='#' class='blue-text text-lighten-4'>Consulter</a></p></div></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card marge-top blue-grey darken-3'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator white-text'>" + types[0].type + "</span><p><a href='#' class='blue-text text-lighten-4'>Consulter</a></p></div></div></div>";
+			textAccueil += "<div class='row'><div class='col s4'><div class='card marge-top blue-grey darken-3'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart3 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator white-text'>" + types[0].type + "</span><p><a href='#' class='blue-text text-lighten-4'>Consulter</a></p></div></div></div></div>";
 		}
 
 		return textAccueil;
