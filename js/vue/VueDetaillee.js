@@ -22,7 +22,8 @@ class VueDetaillee {
 
 		let textAccueil = this.creerDivs(typeVoulu);
 
-		elementBody.innerHTML = textAccueil;
+        elementBody.innerHTML = textAccueil;
+        sidebar.innerHTML = textSidebar;
 
 		this.afficherGraphique(".ct-chart1", moyennePourGraphe[0].reverse(),['ok','dac']);
 
