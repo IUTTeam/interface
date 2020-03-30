@@ -5,7 +5,7 @@ class VueDetaillee {
 		this.pageDetaillee = document.getElementById("page-detaillee").innerHTML;
 	}
 
-	afficher(types, typeVoulu, moyennePourGraphe) {
+	afficher(types, typeVoulu, moyennePourGraphe,stats) {
 
         let elementBody = document.getElementsByTagName("main")[0];
         document.getElementById("hidden").style.display = 'none';
@@ -22,7 +22,7 @@ class VueDetaillee {
 			textSidebar += "<li><a href='#" + type.type + "'><i class='material-icons blue-grey-text text-lighten-1'>data_usage</i>" + this.capitalizeFirstLetter(type.type) + "</a></li>";
 		});
 
-		let textAccueil = this.creerDivs(typeVoulu);
+		let textAccueil = this.creerDivs(typeVoulu,stats);
 
         elementBody.innerHTML = textAccueil;
         sidebar.innerHTML = textSidebar;
@@ -36,14 +36,14 @@ class VueDetaillee {
 		this.afficherGraphique(".ct-chart4", moyennePourGraphe[3].reverse(),['ok','dac']);
 	}
 
-	creerDivs(typeVoulu) {
+	creerDivs(typeVoulu,stats) {
 
 		let textAccueil = "";
 
-		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière heure<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Card Title<i class='material-icons right'>close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier jour<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Card Title<i class='material-icons right'>close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-purple accent-1 marge bord-arrondi'><div class='ct-chart3 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier mois<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Card Title<i class='material-icons right'>close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière année<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Card Title<i class='material-icons right'>close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div></div></div>";
+		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière heure<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Statistiques<i class='material-icons right'>close</i></span></br><div class='black-text'>minimum : " + stats[3].min + " " + typeVoulu.unite +"</div></br><div class='black-text'>moyenne : " + stats[3].moyenne + " " + typeVoulu.unite +"</div></br><div class='black-text'>maximum : " + stats[3].max + " " + typeVoulu.unite +"</div></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier jour<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Statistiques<i class='material-icons right'>close</i></span></br><div class='black-text'>minimum : " + stats[3].min + " " + typeVoulu.unite +"</div></br><div class='black-text'>moyenne : " + stats[3].moyenne + " " + typeVoulu.unite +"</div></br><div class='black-text'>maximum : " + stats[3].max + " " + typeVoulu.unite +"</div></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-purple accent-1 marge bord-arrondi'><div class='ct-chart3 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier mois<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Statistiques<i class='material-icons right'>close</i></span></br><div class='black-text'>minimum : " + stats[3].min + " " + typeVoulu.unite +"</div></br><div class='black-text'>moyenne : " + stats[3].moyenne + " " + typeVoulu.unite +"</div></br><div class='black-text'>maximum : " + stats[3].max + " " + typeVoulu.unite +"</div></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière année<i class='material-icons right'>more_vert</i></span></div><div class='card-reveal'><span class='card-title grey-text text-darken-4'>Statistiques<i class='material-icons right'>close</i></span></br><div class='black-text'>minimum : " + stats[3].min + " " + typeVoulu.unite +"</div></br><div class='black-text'>moyenne : " + stats[3].moyenne + " " + typeVoulu.unite +"</div></br><div class='black-text'>maximum : " + stats[3].max + " " + typeVoulu.unite +"</div></div></div></div></div>";
 
 
 		return textAccueil;
