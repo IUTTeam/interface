@@ -68,12 +68,11 @@ class DonneeDAO {
                 })
                 .then(function (json) {
                     resultat = JSON.parse(json);
-                    console.log(resultat);
                 });
             moyennes.push(this.getMoyennePourGraphique(resultat, taille));
         }
-        console.log(moyennes);
         
+        console.log(moyennes);
         return moyennes;
     }
 
