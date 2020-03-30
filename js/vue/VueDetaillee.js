@@ -5,7 +5,7 @@ class VueDetaillee {
 		this.pageDetaillee = document.getElementById("page-detaillee").innerHTML;
 	}
 
-	afficher(types,moyennePourGraphe) {
+	afficher(types, typeVoulu, moyennePourGraphe) {
 
         let elementBody = document.getElementsByTagName("main")[0];
 
@@ -20,7 +20,7 @@ class VueDetaillee {
 			textSidebar += "<li><a href='#" + type.type + "'><i class='material-icons blue-grey-text text-lighten-1'>data_usage</i>" + this.capitalizeFirstLetter(type.type) + "</a></li>";
 		});
 
-		let textAccueil = this.creerDivs(types);
+		let textAccueil = this.creerDivs(typeVoulu);
 
 		elementBody.innerHTML = textAccueil;
 
@@ -31,18 +31,16 @@ class VueDetaillee {
 		this.afficherGraphique(".ct-chart3", moyennePourGraphe[2].reverse(),['ok','dac']);
 
 		this.afficherGraphique(".ct-chart4", moyennePourGraphe[3].reverse(),['ok','dac']);
-
-		console.log("ok");
 	}
 
-	creerDivs(types) {
+	creerDivs(typeVoulu) {
 
 		let textAccueil = "";
 
-		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(types[0].type) + "<span id='padding'>" + this.capitalizeFirstLetter(types[0].unite) + "</span></span><p><div class='card-action'><a href='#" + types[0].type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(types[1].type) + "<span id='padding'>" + this.capitalizeFirstLetter(types[1].unite) + "</span></span><p><div class='card-action'><a href='#" + types[1].type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart3 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(types[1].type) + "<span id='padding'>" + this.capitalizeFirstLetter(types[1].unite) + "</span></span><p><div class='card-action'><a href='#" + types[1].type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(types[2].type) + "<span id='padding'>" + this.capitalizeFirstLetter(types[2].unite) + "</span></span><p><div class='card-action'><a href='#" + types[2].type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div></div>";
+		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(typeVoulu.type) + "<span id='padding'>" + this.capitalizeFirstLetter(typeVoulu.unite) + "</span></span><p><div class='card-action'><a href='#" + types.type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(typeVoulu.type) + "<span id='padding'>" + this.capitalizeFirstLetter(typeVoulu.unite) + "</span></span><p><div class='card-action'><a href='#" + types.type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart3 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(typeVoulu.type) + "<span id='padding'>" + this.capitalizeFirstLetter(typeVoulu.unite) + "</span></span><p><div class='card-action'><a href='#" + types.type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-perfect-fourth ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>" + this.capitalizeFirstLetter(typeVoulu.type) + "<span id='padding'>" + this.capitalizeFirstLetter(typeVoulu.unite) + "</span></span><p><div class='card-action'><a href='#" + types.type + "' class='blue-text text-lighten-4'>Consulter</a></div></p></div></div></div></div>";
 
 		return textAccueil;
 	}
@@ -52,7 +50,6 @@ class VueDetaillee {
 	}
 
 	afficherGraphique(nomClass,tableauValeur,tableauLabel){	
-		console.log(tableauValeur)
 		var data = {
 			labels: tableauLabel,
 			series: [tableauValeur]

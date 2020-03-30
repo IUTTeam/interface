@@ -52,7 +52,7 @@
 					}
 				}
 			}
-			vueDetaillee.afficher(types,moyennesPourGraphe);
+			vueDetaillee.afficher(types, typeVoulu,moyennesPourGraphe);
 		}
 	}
 
