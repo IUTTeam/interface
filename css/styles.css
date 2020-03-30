@@ -30,6 +30,11 @@
 	margin-top: 3.5%;
 }
 
+.dashboard {
+	text-decoration: none;
+	color: #a9afbbd1;
+}
+
 body {
 	background-color: #1a2035;
 	color: #a9afbbd1;
