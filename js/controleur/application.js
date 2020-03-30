@@ -36,7 +36,14 @@
 			vueDonnees.afficher(types, moyennesPourGraphe);
 		} else {
 
-			let moyennesPourGraphe = await donneeDAO.recupererDonneePourPageSpecifique(types[0]);
+			let typeVoulu;
+
+			types.forEach(type => {
+				if(type.type == hash.substring(1))
+					typeVoulu = type;
+			});
+
+			let moyennesPourGraphe = await donneeDAO.recupererDonneePourPageSpecifique(typeVoulu);
 			vueDetaillee.afficher(moyennesPourGraphe);
 		}
 	}
