@@ -24,6 +24,8 @@ class VueDonnees {
 		let sidebar = document.getElementById("types");
 		let elementBody = document.getElementsByTagName("main")[0];
 
+		document.getElementById("hidden").style.display = 'block';
+
 		let textSidebar = "";
 
 		types.forEach(type => {

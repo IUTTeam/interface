@@ -8,6 +8,7 @@ class VueDetaillee {
 	afficher(types, typeVoulu, moyennePourGraphe) {
 
         let elementBody = document.getElementsByTagName("main")[0];
+        document.getElementById("hidden").style.display = 'none';
 
 		elementBody.innerHTML = this.pageDetaillee;
 
