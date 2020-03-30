@@ -5,6 +5,12 @@ class DonneeDAO {
         this.NOMBRE_SECONDES_JOUR = 86400;
         this.NOMBRE_SECONDES_HEURE = 3600;
         this.NOMBRE_SECONDES_DEUX_MINUTE = 120;
+        this.stats = [];
+    }
+
+    getStats() {
+
+        return this.stats;
     }
 
     async recupererMoyennesDonneesQuotidiennes(type) {
@@ -69,14 +75,12 @@ class DonneeDAO {
                 .then(function (json) {
                     resultat = JSON.parse(json);
                 });
+            this.stats.push(resultat.statsGenerales);
             moyennes.push(this.getMoyennePourGraphique(resultat, taille));
         }
         
-        console.log(moyennes);
         return moyennes;
     }
-
-
 
     getMoyennePourGraphique(json, nb) {
 

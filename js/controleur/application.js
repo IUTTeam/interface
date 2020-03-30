@@ -52,7 +52,8 @@
 					}
 				}
 			}
-			vueDetaillee.afficher(types, typeVoulu,moyennesPourGraphe);
+			
+			vueDetaillee.afficher(types, typeVoulu, moyennesPourGraphe, donneeDAO.getStats());
 		}
 	}
 
