@@ -25,6 +25,7 @@ class VueDonnees {
 		let elementBody = document.getElementsByTagName("main")[0];
 
 		document.getElementById("hidden").style.display = 'block';
+		document.getElementById("titre").innerHTML = 'Accueil';
 
 		let textSidebar = "";
 

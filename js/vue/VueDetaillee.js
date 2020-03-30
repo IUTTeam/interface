@@ -9,6 +9,7 @@ class VueDetaillee {
 
         let elementBody = document.getElementsByTagName("main")[0];
         document.getElementById("hidden").style.display = 'none';
+        document.getElementById("titre").innerHTML = this.capitalizeFirstLetter(typeVoulu.type) + " " + this.capitalizeFirstLetter(typeVoulu.unite);
 
 		elementBody.innerHTML = this.pageDetaillee;
 
