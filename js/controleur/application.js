@@ -19,6 +19,7 @@ class Application {
 		
 			let types = await this.typeDAO.recupererType();
 			let moyennesPourGraphe = await this.donneeDAO.recupererMoyennesDonneesQuotidiennes(types);
+			await this.donneeDAO.recupererDonneePourPageSpecifique(types[0]);
 
 			for (let j = 0; j < moyennesPourGraphe.length;j++) {
 				for (let i = 0; i < moyennesPourGraphe[j].length; i++){

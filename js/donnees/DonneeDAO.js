@@ -10,10 +10,11 @@ class DonneeDAO {
     async recupererMoyennesDonneesQuotidiennes(type) {
 
         let moyennes = [];
+        let interval = this.getIntervalleJour();
 
         for (let i = 0; i < type.length; i++) {
 
-            let json = this.creerJSON(type[i].type, type[i].unite);
+            let json = this.creerJSON(type[i].type, type[i].unite, interval);
             var resultat;
             var url = "https://service.frfr.duckdns.org/request_data?donnees=" + encodeURIComponent(json);
             let reponse = await fetch(url)
@@ -32,27 +33,57 @@ class DonneeDAO {
 
     async recupererDonneePourPageSpecifique(type) {
 
-        let json = this.creerJSON(type, unite);
+        let moyennes = [];
+        let interval;
+        let taille;
 
-        var resultat;
-        var url = "https://service.frfr.duckdns.org/request_data?donnees=" + encodeURIComponent(json);
-        let reponse = await fetch(url)
-            .then(function (reponse) {
-                //console.log(reponse);
-                return reponse.text();
-            })
-            .then(function (json) {
-                resultat = JSON.parse(json);
-                console.log(resultat);
-            });
-        return resultat;
-    };
+        for (let i = 0; i < 4; i++) {
+
+            if(i == 0) {
+
+                interval = this.getIntervalleHeure();
+                taille = 30;
+            } else if(i == 1) {
+
+                interval = this.getIntervalleJour();
+                taille = 24;
+            } else if(i == 2) {
+
+                interval = this.getIntervalleMois();
+                taille = 31;
+            } else {
+
+                interval = this.getIntervalleAnnee();
+                taille = 12;
+            }
+
+            let json = this.creerJSON(type.type, type.unite, interval);
+
+            var resultat;
+            var url = "https://service.frfr.duckdns.org/request_data?donnees=" + encodeURIComponent(json);
+            let reponse = await fetch(url)
+                .then(function (reponse) {
+                    //console.log(reponse);
+                    return reponse.text();
+                })
+                .then(function (json) {
+                    resultat = JSON.parse(json);
+                    console.log(resultat);
+                });
+            moyennes.push(this.getMoyennePourGraphique(resultat, taille));
+        }
+        console.log(moyennes);
+        
+        return moyennes;
+    }
+
+
 
     getMoyennePourGraphique(json, nb) {
 
         let moyenne = [];
 
-        for(let i = 0; i < nb; i++) {
+        for (let i = 0; i < nb; i++) {
 
             moyenne.push(json.statsDonnees[i].moyenne);
         }
@@ -60,9 +91,7 @@ class DonneeDAO {
         return moyenne;
     }
 
-    creerJSON(type, unite) {
-
-        let interval = this.getIntervalleJour();
+    creerJSON(type, unite, interval) {
 
         var text = '{"type":"' + type + '",' +
             '"unite":"' + unite + '",' +
