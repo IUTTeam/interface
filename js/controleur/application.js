@@ -3,7 +3,7 @@
 	let vueDonnees;
 	let typeDAO;
 	let donneeDAO;
-	this.vueDetaillee;
+	let vueDetaillee;
 
 	var initialiser = function () {
 
@@ -18,10 +18,10 @@
 	var naviguer = async function () {
 
 		var hash = window.location.hash;
+		let types = await typeDAO.recupererType();
 
 		if (!hash) {
 
-			let types = await typeDAO.recupererType();
 			let moyennesPourGraphe = await donneeDAO.recupererMoyennesDonneesQuotidiennes(types);
 			//await this.donneeDAO.recupererDonneePourPageSpecifique(types[0]);
 
@@ -36,8 +36,8 @@
 			vueDonnees.afficher(types, moyennesPourGraphe);
 		} else {
 
-			console.log(hash);
-			vueDetaillee.afficher();
+			let moyennesPourGraphe = await donneeDAO.recupererDonneePourPageSpecifique(types[0]);
+			vueDetaillee.afficher(moyennesPourGraphe);
 		}
 	}
 
