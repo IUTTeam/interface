@@ -33,7 +33,7 @@ class VueDonnees {
 
 		let textAccueil = this.creerDivs(types);
 
-		sidebar.innerHTML += textSidebar;
+		sidebar.innerHTML = textSidebar;
 
 		elementBody.innerHTML = textAccueil;
 		elementBody.innerHTML += this.pageDonnee;
