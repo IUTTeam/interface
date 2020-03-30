@@ -61,7 +61,7 @@ class VueDetaillee {
  			 // Disable line smoothing
   			lineSmooth: true,
 
-  			height: '70%'
+  			height: '14em'
   		};
 		new Chartist.Line(nomClass, data, options);
 	}
