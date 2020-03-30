@@ -44,7 +44,15 @@
 			});
 
 			let moyennesPourGraphe = await donneeDAO.recupererDonneePourPageSpecifique(typeVoulu);
-			vueDetaillee.afficher(moyennesPourGraphe);
+
+			for (let j = 0; j < moyennesPourGraphe.length; j++) {
+				for (let i = 0; i < moyennesPourGraphe[j].length; i++) {
+					if (!moyennesPourGraphe[j][i]) {
+						moyennesPourGraphe[j][i] = 0;
+					}
+				}
+			}
+			vueDetaillee.afficher(types,moyennesPourGraphe);
 		}
 	}
 
