@@ -42,6 +42,7 @@ class DonneeDAO {
         let moyennes = [];
         let interval;
         let taille;
+        this.stats = [];
 
         for (let i = 0; i < 4; i++) {
 
