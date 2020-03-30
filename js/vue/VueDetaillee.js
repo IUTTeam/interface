@@ -40,10 +40,10 @@ class VueDetaillee {
 
 		let textAccueil = "";
 
-		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>dernière heure</div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>dernier jour</span></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-purple accent-1 marge bord-arrondi'><div class='ct-chart3 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>dernier mois</span></div></div></div>";
-		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>dernière année</span></div></div></div></div>";
+		textAccueil += "<div class='row'><div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block waves-light green lighten-1 marge bord-arrondi'><div class='ct-chart1 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière heure</div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block amber darken-4 marge bord-arrondi'><div class='ct-chart2 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier jour</span></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-purple accent-1 marge bord-arrondi'><div class='ct-chart3 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernier mois</span></div></div></div>";
+		textAccueil += "<div class='col l6 m12'><div class='card marge-top' id='couleurDuBoss'><div class='card-image waves-effect waves-block deep-orange accent-3 marge bord-arrondi'><div class='ct-chart4 ct-series-a'></div></div><div class='card-content'><span class='card-title activator'>Dernière année</span></div></div></div></div>";
 
 		return textAccueil;
 	}
