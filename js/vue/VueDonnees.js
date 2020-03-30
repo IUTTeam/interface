@@ -28,7 +28,7 @@ class VueDonnees {
 
 		types.forEach(type => {
 			
-			textSidebar += "<li><a href='#'><i class='material-icons'>data_usage</i>" + this.capitalizeFirstLetter(type.type) + "</a></li>";
+			textSidebar += "<li><a href='#'><i class='material-icons blue-grey-text text-lighten-1'>data_usage</i>" + this.capitalizeFirstLetter(type.type) + "</a></li>";
 		});
 
 		let textAccueil = this.creerDivs(types);
