@@ -35,7 +35,7 @@ class VueDonnees {
 
 		sidebar.innerHTML += textSidebar;
 
-		elementBody.innerHTML += textAccueil;
+		elementBody.innerHTML = textAccueil;
 		elementBody.innerHTML += this.pageDonnee;
 		document.getElementById("nbCapteur").innerHTML = types.length;
 		
