@@ -4,6 +4,7 @@ class DonneeDAO {
         this.NOMBRE_SECONDES_MOIS = 2628000;
         this.NOMBRE_SECONDES_JOUR = 86400;
         this.NOMBRE_SECONDES_HEURE = 3600;
+        this.NOMBRE_SECONDES_DEUX_MINUTE = 120;
     }
 
     async recupererMoyennesDonneesQuotidiennes(type) {
@@ -23,13 +24,13 @@ class DonneeDAO {
                 .then(function (json) {
                     resultat = JSON.parse(json);
                 });
-            moyennes.push(this.getMoyennePourGraphique(resultat));
+            moyennes.push(this.getMoyennePourGraphique(resultat, 24));
         }
 
         return moyennes;
     }
 
-    async recupererDonnee(type, unite) {
+    async recupererDonneePourPageSpecifique(type) {
 
         let json = this.creerJSON(type, unite);
 
@@ -47,11 +48,11 @@ class DonneeDAO {
         return resultat;
     };
 
-    getMoyennePourGraphique(json) {
+    getMoyennePourGraphique(json, nb) {
 
         let moyenne = [];
 
-        for(let i = 0; i < 24; i++) {
+        for(let i = 0; i < nb; i++) {
 
             moyenne.push(json.statsDonnees[i].moyenne);
         }
@@ -117,6 +118,21 @@ class DonneeDAO {
         for (let i = 0; i < 24; i++) {
 
             intervalle += "[" + (timestamp - this.NOMBRE_SECONDES_HEURE * (i + 1)) + "," + (timestamp - this.NOMBRE_SECONDES_HEURE * i) + "],";
+        }
+
+        intervalle = intervalle.substring(0, intervalle.length - 1);
+
+        return intervalle;
+    }
+
+    getIntervalleHeure() {
+
+        let intervalle = "";
+        let timestamp = Date.now() / 1000;
+
+        for (let i = 0; i < 30; i++) {
+
+            intervalle += "[" + (timestamp - this.NOMBRE_SECONDES_DEUX_MINUTE * (i + 1)) + "," + (timestamp - this.NOMBRE_SECONDES_DEUX_MINUTE * i) + "],";
         }
 
         intervalle = intervalle.substring(0, intervalle.length - 1);
