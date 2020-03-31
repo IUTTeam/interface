@@ -27,7 +27,7 @@ class VueDonnees {
 		document.getElementById("hidden").style.display = 'block';
 		document.getElementById("titre").innerHTML = 'Accueil';
 
-		let textSidebar = "";
+		let textSidebar = "<li><a href='#!'>Données disponibles</a></li><li><div class='divider'></div></li>";
 
 		types.forEach(type => {
 			
