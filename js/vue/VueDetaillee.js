@@ -31,9 +31,9 @@ class VueDetaillee {
 
 		this.afficherGraphique(".ct-chart2", moyennePourGraphe[1].reverse(),tableauLabel[1]);
 
-		this.afficherGraphique(".ct-chart3", moyennePourGraphe[2].reverse(),['ok','dac']);
+		this.afficherGraphique(".ct-chart3", moyennePourGraphe[2].reverse(),tableauLabel[2]);
 
-		this.afficherGraphique(".ct-chart4", moyennePourGraphe[3].reverse(),['ok','dac']);
+		this.afficherGraphique(".ct-chart4", moyennePourGraphe[3].reverse(),tableauLabel[3]);
 	}
 
 	creerDivs(typeVoulu,stats) {

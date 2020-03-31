@@ -95,6 +95,7 @@
 				tableauHeure[i] = heure;
 				unSurDeux = false;
 			}else{
+				tableauHeure[i] = "";
 				unSurDeux = true;
 			}
 		}
@@ -113,10 +114,24 @@
 				tableauMinute[i] = minute;
 				unSurDeux = false;
 			}else{
+				tableauMinute[i] = "";
 				unSurDeux = true;
 			}
 		}
 		tableauLabel[0] = tableauMinute;
+		let annee = today.getMonth();
+		let tableauAnnee = [];
+		for (let i = 0; i < 12 ; i++) {
+			annee++;
+			if (annee == 12) {
+				annee = 0;
+			}
+			tableauAnnee[i] = annee;
+		}
+		tableauLabel[3] = tableauAnnee;
+		let mois = today.getDate();
+		console.log(mois);
+
 		return tableauLabel;
 	}
 
