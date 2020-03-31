@@ -19,7 +19,7 @@ class VueDonnees {
 		new Chartist.Line(nomClass, data, options);
 	}
 
-	afficher(types,moyennesPourGraphe) {
+	afficher(types,moyennesPourGraphe,tableauLabel) {
 
 		let sidebar = document.getElementById("types");
 		let elementBody = document.getElementsByTagName("main")[0];
@@ -27,7 +27,7 @@ class VueDonnees {
 		document.getElementById("hidden").style.display = 'block';
 		document.getElementById("titre").innerHTML = 'Accueil';
 
-		let textSidebar = "<li><a href='#!'>Données disponibles</a></li><li><div class='divider'></div></li>";
+		let textSidebar = "<li><a href='#'>Données disponibles</a></li><li><div class='divider'></div></li>";
 
 		types.forEach(type => {
 			
@@ -42,9 +42,9 @@ class VueDonnees {
 		elementBody.innerHTML += this.pageDonnee;
 		document.getElementById("nbCapteur").innerHTML = types.length;
 		
-		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
-		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
-		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2].reverse(), ['', '', '', '','5','','','','','10','','','','','15','','','','','20','','','','24']);
+		this.afficherGraphique(".ct-chart1" ,moyennesPourGraphe[0].reverse(), tableauLabel);
+		this.afficherGraphique(".ct-chart2" ,moyennesPourGraphe[1].reverse(), tableauLabel);
+		this.afficherGraphique(".ct-chart3" ,moyennesPourGraphe[2].reverse(), tableauLabel);
 
 	}
 

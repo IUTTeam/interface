@@ -15,7 +15,7 @@ class VueDetaillee {
 
 		let sidebar = document.getElementById("types");
 
-		let textSidebar = "<li><a href='#!'>Données disponibles</a></li><li><div class='divider'></div></li>";
+		let textSidebar = "<li><a href='#'>Données disponibles</a></li><li><div class='divider'></div></li>";
 
 		types.forEach(type => {
 			

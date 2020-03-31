@@ -22,6 +22,8 @@
 
 		if (!hash) {
 
+			tableauLabel = recupererTableauLabelHeure();
+
 			let moyennesPourGraphe = await donneeDAO.recupererMoyennesDonneesQuotidiennes(types);
 			//await this.donneeDAO.recupererDonneePourPageSpecifique(types[0]);
 
@@ -33,7 +35,7 @@
 				}
 			}
 
-			vueDonnees.afficher(types, moyennesPourGraphe);
+			vueDonnees.afficher(types, moyennesPourGraphe,tableauLabel);
 		} else {
 
 			let typeVoulu;
@@ -52,9 +54,28 @@
 					}
 				}
 			}
-			
-			vueDetaillee.afficher(types, typeVoulu, moyennesPourGraphe, donneeDAO.getStats());
+			vueDetaillee.afficher(types, typeVoulu, moyennesPourGraphe, donneeDAO.getStats(), tableauLabel);
 		}
+	}
+
+	var recupererTableauLabelHeure = function() {
+		let unSurDeux = true;
+		let today = new Date();
+		let heure = today.getHours();
+		let tableauHeure = []
+		for (let i = 0; i < 24 ; i++) {
+			heure++;
+			if (heure == 24) {
+				heure = 0;
+			}
+			if (unSurDeux) {
+				tableauHeure[i] = heure;
+				unSurDeux = false;
+			}else{
+				unSurDeux = true;
+			}
+		}
+		return tableauHeure;
 	}
 
 	initialiser();
