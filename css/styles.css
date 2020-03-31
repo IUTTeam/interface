@@ -79,3 +79,14 @@ body {
 .couleur-nav {
 	background-color: #2A334A;
 }
+
+[data-x-axis]::before {
+content: attr(data-x-axis);
+position: absolute;
+width: 100%;
+text-align: center;
+left: 0;
+bottom: 0;
+font-size: 11px;
+color: white;
+}
