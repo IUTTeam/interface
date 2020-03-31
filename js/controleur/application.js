@@ -84,11 +84,12 @@
 		let unSurDeux = true;
 		let tableauLabel = [];
 		let today = new Date();
+
 		let heure = today.getHours();
 		let tableauHeure = [];
 		for (let i = 0; i < 24 ; i++) {
 			heure++;
-			if (heure == 24) {
+			if (heure >= 24) {
 				heure = 0;
 			}
 			if (unSurDeux) {
@@ -100,6 +101,7 @@
 			}
 		}
 		tableauLabel[1] = tableauHeure;
+
 		unSurDeux = true;
 		let minute = today.getMinutes()
 		let tableauMinute = [];
@@ -107,7 +109,7 @@
 			minute+=2;
 			if (minute == 60) {
 				minute = 0;
-			}else if (minute == 61){
+			}else if (minute >= 61){
 				minute = 1;
 			}
 			if (unSurDeux) {
@@ -119,18 +121,48 @@
 			}
 		}
 		tableauLabel[0] = tableauMinute;
+
 		let annee = today.getMonth();
 		let tableauAnnee = [];
 		for (let i = 0; i < 12 ; i++) {
 			annee++;
-			if (annee == 12) {
+			if (annee >= 12) {
 				annee = 0;
 			}
 			tableauAnnee[i] = annee;
 		}
 		tableauLabel[3] = tableauAnnee;
+
+		let tableauMois = [];
+		unSurDeux = true;
 		let mois = today.getDate();
-		console.log(mois);
+		let nbJour;
+		if (mois == 2){
+			if ((annee%4==0) && ((annee%100!=0) || (annee%400==0))) {
+				nbJour = 29;
+			}else{
+				nbJour = 28;
+			}
+		}else if (mois%2 == 0) {
+			nbJour = 30;
+		}else if (mois%2 == 1){
+			nbJour = 31
+		}
+		for (let i = 0; i < nbJour ; i++){
+			mois++;
+			if (mois >= nbJour) {
+				mois = 0;
+			}
+			if (unSurDeux) {
+				tableauMois[i] = mois;
+				unSurDeux = false;
+			}else{
+				tableauMois[i] = "";
+				unSurDeux = true;
+			}
+		}
+		tableauLabel[2] = tableauMois;
+
 
 		return tableauLabel;
 	}
