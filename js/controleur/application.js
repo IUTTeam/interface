@@ -40,6 +40,8 @@
 
 			let typeVoulu;
 
+			let tableauLabel = recupererTableauLabel();
+
 			types.forEach(type => {
 				if(type.type == hash.substring(1))
 					typeVoulu = type;
@@ -76,6 +78,46 @@
 			}
 		}
 		return tableauHeure;
+	}
+
+	var recupererTableauLabel = function() {
+		let unSurDeux = true;
+		let tableauLabel = [];
+		let today = new Date();
+		let heure = today.getHours();
+		let tableauHeure = [];
+		for (let i = 0; i < 24 ; i++) {
+			heure++;
+			if (heure == 24) {
+				heure = 0;
+			}
+			if (unSurDeux) {
+				tableauHeure[i] = heure;
+				unSurDeux = false;
+			}else{
+				unSurDeux = true;
+			}
+		}
+		tableauLabel[1] = tableauHeure;
+		unSurDeux = true;
+		let minute = today.getMinutes()
+		let tableauMinute = [];
+		for (let i = 0; i < 30 ; i++) {
+			minute+=2;
+			if (minute == 60) {
+				minute = 0;
+			}else if (minute == 61){
+				minute = 1;
+			}
+			if (unSurDeux) {
+				tableauMinute[i] = minute;
+				unSurDeux = false;
+			}else{
+				unSurDeux = true;
+			}
+		}
+		tableauLabel[0] = tableauMinute;
+		return tableauLabel;
 	}
 
 	initialiser();

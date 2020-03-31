@@ -5,7 +5,7 @@ class VueDetaillee {
 		this.pageDetaillee = document.getElementById("page-detaillee").innerHTML;
 	}
 
-	afficher(types, typeVoulu, moyennePourGraphe,stats) {
+	afficher(types, typeVoulu, moyennePourGraphe,stats, tableauLabel) {
 
         let elementBody = document.getElementsByTagName("main")[0];
         document.getElementById("hidden").style.display = 'none';
@@ -27,9 +27,9 @@ class VueDetaillee {
         elementBody.innerHTML = textAccueil;
         sidebar.innerHTML = textSidebar;
 
-		this.afficherGraphique(".ct-chart1", moyennePourGraphe[0].reverse(),['ok','dac']);
+		this.afficherGraphique(".ct-chart1", moyennePourGraphe[0].reverse(),tableauLabel[0]);
 
-		this.afficherGraphique(".ct-chart2", moyennePourGraphe[1].reverse(),['ok','dac']);
+		this.afficherGraphique(".ct-chart2", moyennePourGraphe[1].reverse(),tableauLabel[1]);
 
 		this.afficherGraphique(".ct-chart3", moyennePourGraphe[2].reverse(),['ok','dac']);
 
