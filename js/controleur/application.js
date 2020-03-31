@@ -122,6 +122,10 @@
 		}
 		tableauLabel[0] = tableauMinute;
 
+
+		let nomMois = [ "Jan", "Fev", "Mar", "Avr", "Mai", "Jui", 
+           "Juil", "Aou", "Sep", "Oct", "Nov", "Dec" ];
+
 		let annee = today.getMonth();
 		let tableauAnnee = [];
 		for (let i = 0; i < 12 ; i++) {
@@ -129,7 +133,7 @@
 			if (annee >= 12) {
 				annee = 0;
 			}
-			tableauAnnee[i] = annee;
+			tableauAnnee[i] = nomMois[annee];
 		}
 		tableauLabel[3] = tableauAnnee;
 
