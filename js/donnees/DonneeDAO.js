@@ -112,9 +112,9 @@ class DonneeDAO {
         let intervalle = "";
         let timestamp = Date.now() / 1000;
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = -1; i < 12; i++) {
 
-            if (i === 0) {
+            if (i === -1) {
 
                 intervalle += "[" + (timestamp - this.nombreDeSecondesDepuisDebutDuMois()) + "," + timestamp + "],";
                 timestamp = timestamp - this.nombreDeSecondesDepuisDebutDuMois();

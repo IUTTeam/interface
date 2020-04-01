@@ -56,6 +56,9 @@
 					}
 				}
 			}
+
+			console.log(donneeDAO.getStats());
+			
 			vueDetaillee.afficher(types, typeVoulu, moyennesPourGraphe, donneeDAO.getStats(), tableauLabel);
 		}
 	}
