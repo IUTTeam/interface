@@ -11,9 +11,7 @@ class VueDonnees {
 			series: [tableauValeur]
 		};
 		var options = {
-  			// Don't draw the line chart points
   			showPoint: true,
- 			 // Disable line smoothing
   			lineSmooth: true,
   		};
 		new Chartist.Line(nomClass, data, options);
